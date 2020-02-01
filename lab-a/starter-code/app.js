@@ -9,7 +9,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-
+    var total = a + b;
+    var message = 'The sum of ' + a + ' and ' + b + ' is ' + total +'.';
+    return [total, message];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -27,7 +29,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+    var product = a * b;
+    var message = 'The product of ' + a + ' and ' + b + ' is ' + product +'.';
+    return [product, message];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -48,7 +52,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+    var total = sum(sum(a, b)[0], c)[0];
+    var product = multiply(multiply(a, b)[0], c)[0];
+    var message1 = a + ' and ' + b + ' and ' + c + ' sum to ' + total + '.';
+    var message2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product +'.';
+    return [total, product, message1, message2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -70,7 +78,13 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+    var myArr = sumArr;
+    var total = 0;
+    for(var i =0; i < myArr.length; i ++) {
+        total = sum(total, myArr[i])[0];
+    }
+    var message = myArr.toString() + ' was passed in as an array of numbers, and ' + total + ' is their sum.';
+    return [total, message];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -91,7 +105,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var myArr = multArr;
+    var total = 1;
+    for(var i =0; i < myArr.length; i ++) {
+        total = multiply(total, myArr[i])[0];
+    }
+    var message = 'The numbers ' + myArr.toString() + ' have a product of ' + total + '.';
+    return [total, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
@@ -119,7 +139,13 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+    var myArr = dynamicArray;
+    var total = 1;
+    for(var i =0; i < myArr.length; i ++) {
+        total = multiply(total, myArr[i])[0];
+    }
+    var message = 'The numbers ' + myArr.toString() + ' have a product of ' + total + '.';
+    return [total, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
