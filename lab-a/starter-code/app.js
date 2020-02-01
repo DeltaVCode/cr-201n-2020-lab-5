@@ -9,7 +9,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-
+    var total = a + b;
+    var message = 'The sum of ' + a + ' and ' + b + ' is ' + total +'.';
+    return [total, message];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -27,7 +29,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+    var product = a * b;
+    var message = 'The product of ' + a + ' and ' + b + ' is ' + product +'.';
+    return [product, message];
 }
 
 // Here is the test for multiply(); uncomment it to run it
