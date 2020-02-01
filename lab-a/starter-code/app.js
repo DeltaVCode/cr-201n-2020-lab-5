@@ -105,7 +105,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var myArr = multArr;
+    var total = 1;
+    for(var i =0; i < myArr.length; i ++) {
+        total = multiply(total, myArr[i])[0];
+    }
+    var message = 'The numbers ' + myArr.toString() + ' have a product of ' + total + '.';
+    return [total, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
